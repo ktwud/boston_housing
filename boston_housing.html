@@ -12349,7 +12349,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>"RM" would lead to an increase of "MEDV". instead of "LSTAT" and "PTRATIO" lead a decrease.</p>
+<p><strong>Answer: </strong>"RM" would lead to an increase of "MEDV". instead of "LSTAT" and "PTRATIO" lead a decrease. It's a straight forward thinking that more room would comes more floor area so we need more cost(MEDV) to buy. "LSTAT" means the homeowners of "lower class" (working poor) who can afford lower price of house instead of rich people. The "PTRATIO" means a kind of education quality, which is build on schools' income(education fee), the better education quality means more education fee, the rich family can afford, who always live in the higher-price house.</p>
 
 </div>
 </div>
@@ -12500,7 +12500,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong>Yes, it's a successfully prediction model for the high R2 square.</p>
+<p><strong>Answer:</strong>Yes, it's a successfully prediction model for the high R2 square 0.923 which is close to 1 means dependent variable can be predicted from the independent variable. From data we can observe, the prediction and True value are close.</p>
 
 </div>
 </div>
@@ -12577,7 +12577,7 @@ Standard deviation of prices: $165,171.13
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>To prevent overfitting by finding the minimum error of cross-validation.</p>
+<p><strong>Answer: </strong>Split dataset into training and testing subsets is validation, We can iterate the rest of parts to test, so we could detect overfitting, and we could just find the minimum error of cross-validation to find the suitable fitting.</p>
 
 </div>
 </div>
@@ -13685,7 +13685,7 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The max_depth = 3 training curve and testing cure have stable state converge in 0.8 when the training points added. It's hard to say the more training points will benefit the model, maybe try some calculas would help.</p>
+<p><strong>Answer: </strong> The max_depth = 3, the training score decreased when the number of points increasing (the less of training data, the easier to train, but it comes large bias) and when the training points up to 300+ the training score converge to 0.8 and testing score also converge. It's no obvious trend to say the more training points will benefit the model, but may spend more time.</p>
 
 </div>
 </div>
@@ -14159,7 +14159,7 @@ AAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>When the max depth = 1, the model suffer high bias (underfitting).
+<p><strong>Answer: </strong>When the max depth = 1, both training and validation score are low, means the model suffer high bias (underfitting).
 When the max depth = 10, the training score is higher than others but the model suffer high variance (overfitting), the validation score is also going down.</p>
 
 </div>
@@ -14219,7 +14219,7 @@ When the max depth = 10, the training score is higher than others but the model 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> The grid search technique go through every combination of probability automatically to find the best solution. We can set every depth of decision tree or every feature to find the highest score.</p>
+<p><strong>Answer: </strong> The grid search technique go through every probability automatically to search for optimal hyperparameters. In this case, we can set every depth of decision tree to find the highest score.(max depth =4)</p>
 
 </div>
 </div>
@@ -14246,7 +14246,7 @@ When the max depth = 10, the training score is higher than others but the model 
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>k-fold cross-validation is a model testing technique by spliting training data in several parts and take one part to do model testing and iterate all parts. If the model overfitted, then cross-validation score will getting worse.</p>
+<p><strong>Answer: </strong>k-fold cross-validation is a model testing technique by spliting training data in k parts, leave one un-touched part to do testing and take k-1 parts to train model. repeat k times then average the errors in every depth. The cross validation provides a way to choose a model for the data and this is ideal method to do with grid search to find the optimal model.</p>
 
 </div>
 </div>
@@ -14387,7 +14387,7 @@ For the <code>fit_model</code> function in the code cell below, you will need to
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h4 id="-Hint:--The-answer-comes-from-the-output-of-the-code-snipped-above."><strong> Hint: </strong> The answer comes from the output of the code snipped above.<a class="anchor-link" href="#-Hint:--The-answer-comes-from-the-output-of-the-code-snipped-above.">&#182;</a></h4><p><strong>Answer: </strong>Parameter 'max_depth' is 4 for the optimal model.</p>
+<h4 id="-Hint:--The-answer-comes-from-the-output-of-the-code-snipped-above."><strong> Hint: </strong> The answer comes from the output of the code snipped above.<a class="anchor-link" href="#-Hint:--The-answer-comes-from-the-output-of-the-code-snipped-above.">&#182;</a></h4><p><strong>Answer: </strong>Parameter 'max_depth' is 4 for the optimal model. It is the same answer in Q6.</p>
 
 </div>
 </div>
@@ -14480,11 +14480,157 @@ Predicted selling price for Client 3&#39;s home: $942,666.67
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong>Predicted selling price for Client 1's home: $391,183.33, Predicted selling price for Client 2's home: $189,123.53, Predicted selling price for Client 3's home: $942,666.67
-The price seems reasonable for more rooms with higher price, less rooms with lower price.</p>
+<p><strong>Answer: </strong>
+The price seems reasonable, predicted price are in the range of data (\$105,000.00 ~ \$1,024,800.00)</p>
+<p>Predicted selling price for Client 1's home: \$391,183.33: the client1 with 5 roooms which is less than average (6.24), so the price range is in 105k~438k. The LSTAT =17% means over the 75% of neighbor work less and student/teacher ratio 15% is below 25%, so the 391k seems reasonable.</p>
+<p>Predicted selling price for Client 2's home: \$189,123.53: the client2 with 4 rooms which is close to min of data set, the poverty level 32% and PTRATIO 22% is close to max of data set, so the price 189k is close to 105k seems reasonable.</p>
+<p>Predicted selling price for Client 3's home: \$942,666.67: the client3 with 8 rooms which is close to max of data set, the poverty level 3% and PTRATIO 12 are positive to the price, so 942k seems reasonable.</p>
 
 </div>
 </div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">features</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[19]:</div>
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>RM</th>
+      <th>LSTAT</th>
+      <th>PTRATIO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>489.000000</td>
+      <td>489.000000</td>
+      <td>489.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>6.240288</td>
+      <td>12.939632</td>
+      <td>18.516564</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>0.643650</td>
+      <td>7.081990</td>
+      <td>2.111268</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>3.561000</td>
+      <td>1.980000</td>
+      <td>12.600000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.880000</td>
+      <td>7.370000</td>
+      <td>17.400000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>6.185000</td>
+      <td>11.690000</td>
+      <td>19.100000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>6.575000</td>
+      <td>17.120000</td>
+      <td>20.200000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.398000</td>
+      <td>37.970000</td>
+      <td>22.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython2"><pre><span></span><span class="n">prices</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt output_prompt">Out[22]:</div>
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>count    4.890000e+02
+mean     4.543429e+05
+std      1.653403e+05
+min      1.050000e+05
+25%      3.507000e+05
+50%      4.389000e+05
+75%      5.187000e+05
+max      1.024800e+06
+Name: MEDV, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
 </div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
